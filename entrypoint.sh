@@ -6,7 +6,7 @@ export GIT_CEILING_DIRECTORIES="/github/workspace"
 
 # Generate a temporary key for abuild
 mkdir "$GITHUB_WORKSPACE"/.abuild
-echo "$GITHUB_WORKSPACE/key" | abuild-keygen
+echo "$GITHUB_WORKSPACE/key" | abuild-keygen -a -n
 echo PACKAGER_PRIVKEY="$GITHUB_WORKSPACE/key" > "$HOME"/.abuild/abuild.conf
 
 cp "$GITHUB_WORKSPACE/key.pub" /etc/apk/keys
