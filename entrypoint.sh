@@ -31,6 +31,9 @@ else
     sed -i 's/\r$//' APKBUILD
 fi
 
+# FIX: Force abuild to save into the persistent workspace
+export REPODEST="$GITHUB_WORKSPACE/packages"
+
 # Build the package
 abuild -F checksum
 abuild -F -r
